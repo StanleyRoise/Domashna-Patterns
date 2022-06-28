@@ -1,0 +1,27 @@
+package Paketche;
+
+public class GetUpCommand implements Command
+{
+
+
+	private ApprenticeTrainee trainee;
+	
+	public GetUpCommand(Trainee trainee)
+	{	
+		this.ApprenticeTrainee = trainee;
+	}
+	
+	@Override
+	public void execute() {
+		System.out.println("Get up");	
+		this.ApprenticeTrainee.getUp();
+		
+	}
+
+	@Override
+	public void undo() {
+		this.ApprenticeTrainee.getDown();
+		
+	}
+
+}
