@@ -1,0 +1,51 @@
+package Paketche;
+
+import java.util.List;
+
+public class ApprenticeTrainee implements Observer{
+	private Boolean isDown;
+	private List<Observer> MatrixSheep;
+	
+	public ApprenticeTrainee()
+	{
+		
+		
+	}
+	
+	public void getDown() {
+		this.isDown = true;	
+		System.out.println("ApprenticeTrainee is down");
+		this.notify();
+	}
+	
+	public void getUp() {
+		this.isDown = false;	
+		System.out.println("ApprenticeTrainee is up");
+		this.notify();
+	}
+
+	@Override
+	public void subscribe(Observer observer) {
+		this.MatrixSheep.add(observer);
+		observer.setApprenticeTrainee(this);		
+	}
+
+	
+	public void notifyObserver() {
+		for(Observer viewer : this.MatrixSheep) {
+			viewer.update();		
+		}
+			
+	}
+	
+	@Override
+	public void unsubscribe(Observer observer) {
+		this.MatrixSHeep.remove(observer);
+		observer.setApprenticeTrainee(null);
+	}
+
+	@Override
+	public Boolean getUpdate() {
+		return this.isDown;
+	}
+}
