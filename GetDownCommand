@@ -1,0 +1,23 @@
+package Paketche;
+
+public class GetDownCommand implements Command{
+
+	private ApprenticeTrainee trainee; 
+	public GetDownCommand(ApprenticeTrainee trainee)
+	{	
+		this.ApprenticeTrainee = trainee;
+	}
+	
+	public void execute() {
+		System.out.println("Get down.");	
+		this.ApprenticeTrainee.getDown();
+		
+	}
+
+	@Override
+	public void undo() {
+		this.ApprenticeTrainee.getUp();
+		
+	}
+
+}
