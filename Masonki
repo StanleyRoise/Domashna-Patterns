@@ -1,0 +1,27 @@
+package Paketche;
+
+public class SecretApp {
+
+	public static void Main(String[] args)
+	{
+		MasonTrainer trainer = MasonTrainer.getInstance();
+		ApprenticeTrainee trainee = new ApprenticeTrainee();
+		
+		Command getUpCommand = new GetUpCommand(trainee);
+		Command getDownCommand = new GetDownCommand(trainee);
+		
+		MatrixSheep viewe1= new MatrixSheep("v1");
+			MatrixSheep viewer2= new MatrixSheep("v2");
+			MatrixSheep viewer3 = new MatrixSheep("v3");
+		
+		ApprenticeTrainee.subscribe(viewer1);
+		ApprenticeTrainee.subscribe(viewer3);		
+		ApprenticeTrainee.subscribe(viewer2);
+		
+		MasonTrainer.setCommand(getUpCommand);
+		MasonTrainer.coach();
+		
+		MasonTrainer.setCommand(getDownCommand);
+		MasonTrainer.coach();
+	}
+}
