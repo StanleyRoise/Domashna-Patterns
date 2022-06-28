@@ -1,0 +1,41 @@
+package Paketche;
+
+public class MatrixSheep implements Observer1 {
+
+	private Observable ApprenticeTrainee;
+	private Boolean isDown;
+	private String nickname;
+	
+	public MatrixSheep(String nickname)
+	{
+		this.nickname = nickname;
+		
+	}
+	
+	@Override
+	public void update() {
+		this.ApprenticeTrainee.getUpdate();
+		if(this.ApprenticeTrainee == null)
+		{
+			System.out.println("No ApprenticeTrainee.");	
+			return;			
+		}
+		this.isDown = ApprenticeTrainee.getUpdate();
+		if(this.isDown)
+		{
+			System.out.println(this.nickname + " is down");	
+					return;
+		}
+		
+		System.out.println(this.nickname + " is up");	
+	}
+
+	@Override
+	public void setTrainee(Observable ApprenticeTrainee) {
+		this.ApprenticeTrainee = trainee;
+		
+	}
+	
+	//ToyFactory.getToy(string igrachka?);
+
+}
