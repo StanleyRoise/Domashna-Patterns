@@ -4,11 +4,11 @@ public class GetUpCommand implements Command
 {
 
 
-	private ApprenticeTrainee trainee;
+	private ApprenticeTrainee ApprenticeTrainee;
 	
-	public GetUpCommand(Trainee trainee)
+	public GetUpCommand(ApprenticeTrainee ApprenticeTrainee)
 	{	
-		this.ApprenticeTrainee = trainee;
+		this.ApprenticeTrainee = ApprenticeTrainee;
 	}
 	
 	@Override
